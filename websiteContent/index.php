@@ -1,5 +1,5 @@
 <?php
-require('constant.php');
+require('../passwords/constant.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
