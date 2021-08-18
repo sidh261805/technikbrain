@@ -122,7 +122,7 @@ require('constant.php');
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="navbar">
-  <a href="../../website/home.html"></i> Home</a> 
+  <a href="../home.html"></i> Home</a> 
   <a href="about.html"></i> About</a> 
   <a class="active" href="websiteContent/index.php"></i> Contact</a> 
   <a href="login/register.php"></i> Login</a>
