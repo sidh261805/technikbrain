@@ -43,7 +43,10 @@ require('../passwords/constant.php');
 		  if (!$resp->isSuccess()) {
 				$output = json_encode(array('type'=>'error', 'text' => '<b>Captcha</b> Validation Required!'));
 				die($output);				
-		  }	
+		  }
+		else {
+		    $errors = $resp->getErrorCodes();
+		 }
 	}
 	
 	$toEmail = "25.siddharthdhakad@gmail.com";
