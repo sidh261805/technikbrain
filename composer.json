@@ -1,1 +1,11 @@
-
+{
+  "license": "MIT",
+  "authors": [
+        {
+            "name": "siddharth dhakad",
+            "email": "siddharthdhakad@technikbrain.com",
+            "homepage": "https://www.technikbrain.de",
+            "role": "Owner"
+        }
+    ]
+}
