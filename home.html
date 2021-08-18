@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="images/home.ico">
+<title>WEBSITE UNDER DEVELOPMENT</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+/* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #4CAF50;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+
+
+body {
+  /*background: linear-gradient(90deg, white, gray);*/
+  /*background-color: #eee;
+  background-image: url("images/ultrawide-cloudy-forest-wallpaper.jpg");
+  height: 100%;*/
+  /*background-size: cover; */
+}
+
+body, h1, p {
+  font-family: "Helvetica Neue", "Segoe UI", Segoe, Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  margin-left:  auto;
+  margin-right:  auto;
+  margin-top: 50px;
+  max-width: 1170px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.row:before, .row:after {
+  display: table;
+  content: " ";
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 300;
+  margin: 0 0 20px 0;
+}
+
+.lead {
+  font-size: 21px;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+a {
+  color: #3282e6;
+  text-decoration: none;
+}
+
+
+</style>
+</head>
+
+<body>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Dec 31, 2020 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+<!-- Refresh in 30 second -->
+
+<!-- Load an icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="navbar">
+  <a class="active" href="../website/home.html"></i> Home</a> 
+  <a href="../../website/websiteContent/about.html"></i> About</a> 
+  <a href="../../website/websiteContent/index.php"></i> Contact</a> 
+  <a href="../../website/websiteContent/login/register.php"></i> Login</a>
+</div>
+
+<div class="container text-center" id="error">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="main-icon text-success"><span class="uxicon uxicon-clock-refresh"></span></div>
+      <h1>AUTHOR IS homelandfoodbox Pvt Ltd.</h1>
+      <p>WEBSITE UNDER DEVELOPMENT.......</p>
+      <h1>Future home of something quite cool.</h1>
+    </div>
+  </div>
+
+</div>
+<p>Date: <span id="date"></span></p>
+<p>Time: <span id="time"></span></p>
+
+<script>
+
+var dt = new Date();
+document.getElementById("date").innerHTML = dt.toLocaleDateString();
+document.getElementById("time").innerHTML = dt.toLocaleTimeString();
+</script>
+<p id="demo"></p>
+
+
+
+</body>
+</html>
+
