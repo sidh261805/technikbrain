@@ -1,7 +1,7 @@
 <?php
 if($_POST)
 {
-require('constant.php');
+require('passwords/constant.php');
     
     $user_name      = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
     $user_email     = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
