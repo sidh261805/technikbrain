@@ -46,6 +46,7 @@ require('../passwords/constant.php');
 		  }
 		else {
 		    $errors = $resp->getErrorCodes();
+			echo $errors
 		 }
 	}
 	
