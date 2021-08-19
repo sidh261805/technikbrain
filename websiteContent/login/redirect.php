@@ -11,6 +11,10 @@
 		echo 'not found umane and token';
 	} else {
 		$con = mysqli_connect('localhost', 'u591380594_technikbrain', 'Alkasidd.25', 'u591380594_technikbrain');
+		if (!$conn) {
+		    die("Connection failed: " . mysqli_connect_error());
+		}
+		echo "Connected successfully";
 		$username = $con->real_escape_string($_GET['username']);
 		$token = $con->real_escape_string($_GET['token']);
 		
