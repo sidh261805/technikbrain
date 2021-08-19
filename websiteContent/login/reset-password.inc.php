@@ -1,4 +1,5 @@
 <?php
+include ('../../passwords/db_access.php');
 
 // First we check if the form was submitted.
 if (isset($_POST['reset-password-submit'])) {
@@ -21,7 +22,7 @@ if (isset($_POST['reset-password-submit'])) {
   $currentDate = date('U');
 
   // We get the database connection.
-  $conn = mysqli_connect('localhost', 'u591380594_technikbrain', 'Alkasidd.25', 'u591380594_technikbrain');	
+  $conn = mysqli_connect($db_server, $db_user, $db_password, $db_name);	
   /* Next we need to get the token from our database.
 
   When we look up our token we do it using the selector we created.
