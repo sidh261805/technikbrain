@@ -2,6 +2,7 @@
 session_start();
 error_reporting(E_ALL & ~ E_NOTICE);
 require ('textlocal.class.php');
+include ('../../../passwords/db_access.php');
 
 class Controller
 {
@@ -41,7 +42,11 @@ class Controller
                 if ($otp == $_SESSION['session_otp']) {
 					$mobile_number = $_SESSION['session_mobile_number'];
 					$username = $_SESSION['username'];
-				    $conn = mysqli_connect('localhost', 'users', 'users', 'registration');
+								
+					$conn = mysqli_connect($db_server, $db_user, $db_password, $db_name);
+					if (!$conn) {
+					   die("Connection failed: " . mysqli_connect_error());
+					}
 
 					$query1 ="SELECT * FROM mobilenumber WHERE username='$username'";
 					$result = mysqli_query($conn, $query1);
