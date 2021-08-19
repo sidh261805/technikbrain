@@ -5,16 +5,14 @@
 	// }
 	
 	function redirect() {
-		echo 'wrong';
+		header('location: register.php');
+		exit();
 	}
 	if(!isset($_GET['username']) || !isset($_GET['token'])) {
 		echo 'not found umane and token';
+		redirect();
 	} else {
 		$con = mysqli_connect('localhost', 'u591380594_technikbrain', 'Alkasidd.25', 'u591380594_technikbrain');
-		if (!$con) {
-		    die("Connection failed: " . mysqli_connect_error());
-		}
-		echo "Connected successfully";
 		$username = $con->real_escape_string($_GET['username']);
 		$token = $con->real_escape_string($_GET['token']);
 		
@@ -25,6 +23,7 @@
 			echo 'Your username has been verified! You can log in now!';
 		} else {
 			echo 'end';
+			redirect();
 		}
 		
 	}
