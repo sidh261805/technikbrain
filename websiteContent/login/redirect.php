@@ -17,8 +17,8 @@
 		echo "Connected successfully";
 		$username = $con->real_escape_string($_GET['username']);
 		$token = $con->real_escape_string($_GET['token']);
-		echo 'end $_GET['username'] $_GET['token']';
-		$sql = $con->query("SELECT id FROM users WHERE username='$username' AND token='$token' AND isEmailConfirmed=0");
+		
+		$sql = $con->query("SELECT usersId FROM users WHERE username='$username' AND token='$token' AND isEmailConfirmed=0");
 		
 		if ($sql->num_rows > 0){
 			$con->query("UPDATE users SET isEmailConfirmed=1, token='' WHERE username='$username'");
