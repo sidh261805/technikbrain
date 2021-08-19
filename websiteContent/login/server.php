@@ -7,6 +7,10 @@ $errors = array();
 // connect to the database
 include '../../../passwords/db_access.php';
 $db = mysqli_connect($db_server, $db_user, $db_password, $db_name);
+if ($db->connect_error) {
+  die("Connection failed: " . $db->connect_error);
+}
+echo "Connected successfully";
 
 // use PHPMailer\PHPMailer\PHPMailer;
 // REGISTER USER
