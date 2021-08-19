@@ -108,12 +108,12 @@ include ('../../passwords/db_access.php');
 				success:function(data)
 				{	
 					if(data != '0'){
-						$('#availability').html('<label class="text-success"><span class="glyphicon glyphicon-ok">found</span></label>');
+						$('#availability').html('<label class="text-success"><span class="glyphicon glyphicon-ok">user found</span></label>');
 						$('#register').attr("disable", false);
 					}
 					else
 					{
-						$('#availability').html('<label class="text-danger"><span class="glyphicon glyphicon-remove">not found</span></label>');
+						$('#availability').html('<label class="text-danger"><span class="glyphicon glyphicon-remove">user not found</span></label>');
 						$('#register').attr("disable", true);
 					}
 				}
