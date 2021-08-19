@@ -44,6 +44,10 @@ if (isset($_POST['register'])) {
   	$query = "INSERT INTO users (username, email, password, isEmailConfirmed, token) 
   			  VALUES('$username', '$email', '$password', false, '$token')";
   	mysqli_query($db, $query);
+	  
+	$headers = "From: admin@technikbrain.com\r\n";
+	$headers .= "Reply-To: support@technikbrain.com\r\n";
+	$headers .= "Return-Path: support@technikbrain.com\r\n";
 	
 	$message = 
 	"
@@ -51,12 +55,16 @@ if (isset($_POST['register'])) {
 	Click the link below to verify your account
 	http://technikbrain.com/websiteContent/login/redirect.php?username=$username&token=$token
 	
-	From
-	admin@technikbrain.com
+	With Best Regards,
+	Technikbrain Team
 	";
-	mail($email,"Technikbrain Confirm Email",$message,"From: admin@technikbrain.com");
-	echo "Registration Complete! Please confirm your email ID!";
-	exit();
+	
+        if (mail($email,"Technikbrain Confirm Email",$message,$headers)) {
+            echo "Registration Complete! Please confirm your email ID!";
+            exit();
+        } else {
+            echo "The email has failed!";
+        }
   }
 }
 // LOGIN USER
