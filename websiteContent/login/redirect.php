@@ -21,9 +21,10 @@
 		if ($sql->num_rows > 0){
 			$con->query("UPDATE users SET isEmailConfirmed=1, token='' WHERE username='$username'");
 			echo 'Your username has been verified! You can log in now!';
-		}else
+		} else {
 			echo 'end';
 			redirect();
+		}
 		
 	}
 	
