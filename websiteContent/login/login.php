@@ -1,4 +1,8 @@
-<?php include('server.php'); ?>
+<?php 
+include('server.php'); 
+include ('../../../passwords/db_access.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
