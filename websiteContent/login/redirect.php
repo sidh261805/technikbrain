@@ -9,6 +9,7 @@
 		exit();
 	}
 	if(!isset($_GET['username']) || !isset($_GET['token'])) {
+		echo 'not found umane and token';
 		redirect();
 	} else {
 		$con = mysqli_connect('localhost', 'u591380594_technikbrain', 'Alkasidd.25', 'u591380594_technikbrain');
@@ -22,6 +23,7 @@
 			echo 'Your username has been verified! You can log in now!';
 		}else
 			redirect();
+			echo 'end';
 		
 	}
 	
