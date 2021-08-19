@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('../../../passwords/db_access.php');
+include ('../../passwords/db_access.php');
 // initializing variables
 $username = "";
 $email    = "";
