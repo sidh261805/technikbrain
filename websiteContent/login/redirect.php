@@ -11,7 +11,7 @@
 	if(!isset($_GET['username']) || !isset($_GET['token'])) {
 		redirect();
 	} else {
-		$con = mysqli_connect('localhost', 'users', 'users', 'registration');
+		$con = mysqli_connect('localhost', 'u591380594_technikbrain', 'Alkasidd.25', 'u591380594_technikbrain');
 		$username = $con->real_escape_string($_GET['username']);
 		$token = $con->real_escape_string($_GET['token']);
 		
