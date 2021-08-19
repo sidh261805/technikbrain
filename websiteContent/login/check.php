@@ -1,6 +1,6 @@
 <?php
 
-include '../../../passwords/db_access.php';
+include '../../passwords/db_access.php';
 $db = mysqli_connect($db_server, $db_user, $db_password, $db_name);
 if(isset($_POST["user_name"]))
 {
