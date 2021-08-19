@@ -6,6 +6,10 @@ $email    = "";
 $errors = array(); 
 // connect to the database
 $db = mysqli_connect('localhost', 'technikbrain', 'Alkasidd.25', 'u591380594_technikbrain');
+if (!$db) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
 // use PHPMailer\PHPMailer\PHPMailer;
 // REGISTER USER
 if (isset($_POST['register'])) {
