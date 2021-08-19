@@ -48,12 +48,12 @@ if (isset($_POST['register'])) {
 	"
 	Confirm Your Email
 	Click the link below to verify your account
-	http://automationbuddy.in/websiteContent/login/redirect.php?username=$username&token=$token
+	http://technikbrain.com/websiteContent/login/redirect.php?username=$username&token=$token
 	
 	From
-	admin@automationbuddy.in
+	admin@technikbrain.com
 	";
-	mail($email,"Automationbuddy Confirm Email",$message,"From: admin@automationbuddy.in");
+	mail($email,"Technikbrain Confirm Email",$message,"From: admin@technikbrain.com");
 	echo "Registration Complete! Please confirm your email ID!";
 	exit();
   }
