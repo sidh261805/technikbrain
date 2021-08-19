@@ -30,7 +30,7 @@ include_once 'dbh.php';
       //Then we check if there was an upload error
       if ($fileError === 0) {
         //Here we set a limit on the allowed file size (in this case 500mb)
-        if ($fileSize < 50000) {
+        if ($fileSize < 5000000) {
           //We now need to create a unique ID which we use to replace the name of the uploaded file, before inserting it into our rootfolder
           //If we don't do this, we might end up overwriting the file if we upload a file later with the same name
           //Here we create a unique ID based on the current time, meaning that no ID is identical. And we add the file extention type behind it.
