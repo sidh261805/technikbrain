@@ -5,11 +5,11 @@ if (isset($_POST["reset-request-submit"])){
 	$selector = bin2hex(random_bytes(8));
 	$token = random_bytes(32);
 	
-	$url = "www.automationbuddy.in/websiteContent/login/create-new-password.php?selector=" .$selector . "&validator=" . bin2hex($token);
+	$url = "www.technikbrain.com/websiteContent/login/create-new-password.php?selector=" .$selector . "&validator=" . bin2hex($token);
 	
 	$expires = date("U")+1800;
 	
-	$conn = mysqli_connect('localhost', 'users', 'users', 'registration');
+	$conn = mysqli_connect('localhost', 'u591380594_technikbrain', 'Alkasidd.25', 'u591380594_technikbrain');
 	
 	$userEmail = $_POST["email"];
 	
@@ -39,15 +39,15 @@ if (isset($_POST["reset-request-submit"])){
 	mysqli_close($conn);
 	
 	$to = $userEmail;
-	$subject = 'Reset your password for automationbuddy.in';
+	$subject = 'Reset your password for technikbrain.com';
 	
 	$message = '<p>We received a password reset request. The link to reset your password is below. If you 
 		did not make this request, you can ignore this email</p>';
 	$message .= '<p>Here is your password reset link : </br>';
 	$message .= '<a href="' .$url . '">' . $url . '</a></p>';
 	
-	$headers = "From: admin <admin@automationbuddy.in>\r\n";
-	$headers = "Reply-To: admin@automationbuddy.in\r\n";
+	$headers = "From: admin <admin@technikbrain.com>\r\n";
+	$headers = "Reply-To: admin@technikbrain.com\r\n";
 	$headers .= "Content-type: text/html\r\n";
 	mail($to, $subject, $message, $headers);
 	
