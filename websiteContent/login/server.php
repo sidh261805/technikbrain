@@ -5,7 +5,7 @@ $username = "";
 $email    = "";
 $errors = array(); 
 // connect to the database
-$db = mysqli_connect('localhost', 'users', 'Alkasidd.25', 'u591380594_technikbrain');
+$db = mysqli_connect('localhost', 'u591380594_technikbrain', 'Alkasidd.25', 'users');
 if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
 }
