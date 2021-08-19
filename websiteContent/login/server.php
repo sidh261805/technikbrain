@@ -5,7 +5,8 @@ $username = "";
 $email    = "";
 $errors = array(); 
 // connect to the database
-$db = mysqli_connect('localhost', 'u591380594_technikbrain', 'Alkasidd.25', 'u591380594_technikbrain');
+include '../../../passwords/db_access.php';
+$db = mysqli_connect($db_server, $db_user, $db_password, $db_name);
 
 // use PHPMailer\PHPMailer\PHPMailer;
 // REGISTER USER
