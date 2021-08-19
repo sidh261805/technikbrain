@@ -1,6 +1,7 @@
 <?php
 
-$db = mysqli_connect('localhost', 'u591380594_technikbrain', 'Alkasidd.25', 'u591380594_technikbrain');
+include '../../../passwords/db_access.php';
+$db = mysqli_connect($db_server, $db_user, $db_password, $db_name);
 if(isset($_POST["user_name"]))
 {
 	$username = mysqli_real_escape_string($db, $_POST["user_name"]);
