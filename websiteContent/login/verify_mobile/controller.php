@@ -30,6 +30,7 @@ class Controller
                 
                 try{
                     $response = $Textlocal->sendSms($numbers, $message, $sender);
+		    print_r($response);
                     require_once ("verification-form.php");
                     exit();
                 }catch(Exception $e){
