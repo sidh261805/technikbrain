@@ -75,8 +75,8 @@
 					$result = mysqli_query($conn, $query1);
 					if ($row = mysqli_fetch_assoc($result))
 						{
-							$imagename = $row['imagename'];
-							$image = resize_image('upload/".$image."', 200, 200);
+							$imagename1 = $row['imagename'];
+							$image = resize_image('upload/".imagename1."', 200, 200);
 							echo "<img src='$image'><br>";
 						}		
 				} else {
