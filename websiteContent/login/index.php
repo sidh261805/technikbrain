@@ -48,7 +48,7 @@
 					if ($row = mysqli_fetch_assoc($result))
 						{
 							$imagename = $row['imagename'];
-							echo "<img style="width: 200; height: 300"  src='upload/".$imagename."'><br>";
+							echo '<img style="width: 500px; height: 200px" src="data:upload/".$imagename.;base64,' . base64_encode($row['venueimage']) . '"/>';
 						}		
 				} else {
 					 echo "<img src='../../images/default.png'><br>";
