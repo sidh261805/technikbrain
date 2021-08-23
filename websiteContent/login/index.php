@@ -12,6 +12,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+<style type="text/css">
+.image-wrapper {
+    height: 100px;
+    width: 100px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+}
+</style> 
+	
 </head>
 <body>
 	<div class="header">
@@ -46,8 +59,10 @@
 					$result = mysqli_query($conn, $query1);
 					if ($row = mysqli_fetch_assoc($result))
 						{
+							<div class="image-wrapper">
 							$imagename = $row['imagename'];
 							echo "<img src='upload/".$imagename."'><br>";
+							</div>
 						}		
 				} else {
 					 echo "<img src='../../images/default.png'><br>";
