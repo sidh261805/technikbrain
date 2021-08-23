@@ -47,7 +47,8 @@
 					$result = mysqli_query($conn, $query1);
 					if ($row = mysqli_fetch_assoc($result))
 						{
-							echo '<img style="width: 500px; height: 200px" src="data:image/jpeg;base64,' . base64_encode($row['imagename']) . '"/>';
+							$imagename = $row['imagename'];
+							echo "<img src='upload/".$imagename."'><br>";
 						}		
 				} else {
 					 echo "<img src='../../images/default.png'><br>";
