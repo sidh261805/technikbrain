@@ -13,18 +13,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	
-<style type="text/css">
-.image-wrapper {
-    height: 100px;
-    width: 100px;
-}
-
-.image-wrapper img {
-    width: 100%;
-    height: auto;
-}
-</style> 
-	
 </head>
 <body>
 	<div class="header">
@@ -60,9 +48,7 @@
 					if ($row = mysqli_fetch_assoc($result))
 						{
 							$imagename = $row['imagename'];
-							<div class="image-wrapper">
 							echo "<img src='upload/".$imagename."'><br>";
-							</div>
 						}		
 				} else {
 					 echo "<img src='../../images/default.png'><br>";
