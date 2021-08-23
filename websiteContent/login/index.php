@@ -3,34 +3,6 @@
 		header('location: login.php');
 	}
 	session_start();
-	
-	function resize_image($file, $w, $h, $crop=FALSE) {
-	    list($width, $height) = getimagesize($file);
-	    $r = $width / $height;
-	    if ($crop) {
-		if ($width > $height) {
-		    $width = ceil($width-($width*abs($r-$w/$h)));
-		} else {
-		    $height = ceil($height-($height*abs($r-$w/$h)));
-		}
-		$newwidth = $w;
-		$newheight = $h;
-	    } else {
-		if ($w/$h > $r) {
-		    $newwidth = $h*$r;
-		    $newheight = $h;
-		} else {
-		    $newheight = $w/$r;
-		    $newwidth = $w;
-		}
-	    }
-	    $src = imagecreatefromjpeg($file);
-	    $dst = imagecreatetruecolor($newwidth, $newheight);
-	    imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
-
-	    return $dst;
-	}
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -75,9 +47,8 @@
 					$result = mysqli_query($conn, $query1);
 					if ($row = mysqli_fetch_assoc($result))
 						{
-							$imagename1 = $row['imagename'];
-							$image = resize_image('upload/".imagename1."', 200, 200);
-							echo "<img src='$image'><br>";
+							$image = $row['imagename'];
+							echo "<img src='upload/".image."'><br>";
 						}		
 				} else {
 					 echo "<img src='../../images/default.png'><br>";
