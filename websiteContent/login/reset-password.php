@@ -13,10 +13,10 @@
   <form action="reset-request.inc.php" method="post">
 		<input type="text" name="email" placeholder="Enter your e-mail address...">
 		<button type="submit" name="reset-request-submit">Receive new password by e-mail</button>
-  </form>
   <p>
   <a href="login.php">return to login page</a>
   </p>
+  </form>
   <?php
 	if (isset($_GET["reset"])) {
 		if ($_GET["reset"] == "success") {
