@@ -59,8 +59,8 @@
 					$result = mysqli_query($conn, $query1);
 					if ($row = mysqli_fetch_assoc($result))
 						{
-							<div class="image-wrapper">
 							$imagename = $row['imagename'];
+							<div class="image-wrapper">
 							echo "<img src='upload/".$imagename."'><br>";
 							</div>
 						}		
