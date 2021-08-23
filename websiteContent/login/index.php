@@ -47,7 +47,7 @@
 					if ($row = mysqli_fetch_assoc($result))
 						{
 							$imagename = $row['imagename'];
-							echo "<img src='upload/".$$imagename."'><br>";
+							echo "<img src='upload/".$imagename."'><br>";
 						}		
 				} else {
 					 echo "<img src='../../images/default.png'><br>";
