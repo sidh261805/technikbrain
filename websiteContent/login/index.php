@@ -47,8 +47,7 @@
 					if ($row = mysqli_fetch_assoc($result))
 						{
 							$imagename = $row['imagename'];
-							$img = resize_image($imagename, 200, 300);
-							echo "<img src='upload/".$img."'><br>";
+							echo "<img src='upload/".$$imagename."'><br>";
 						}		
 				} else {
 					 echo "<img src='../../images/default.png'><br>";
