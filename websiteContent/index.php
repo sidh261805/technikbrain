@@ -11,13 +11,9 @@ require('../passwords/constant.php');
 	<script>
 	$(document).ready(function (e){
 		$("#frmContact").on('submit',(function(e){
-			echo "line 14";
 			e.preventDefault();
-			echo "line 16";
 			$("#mail-status").show();
-			echo "line 18";
 			$('#send-message').show();
-			echo "line 20";
 			$('#loader-icon').show();
 			$.ajax({
 				url: "contact.php",
