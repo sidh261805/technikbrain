@@ -12,8 +12,8 @@ require('../passwords/constant.php');
 	$(document).ready(function (e){
 		$("#frmContact").on('submit',(function(e){
 			e.preventDefault();
-			$("#mail-status").hide();
-			$('#send-message').hide();
+			$("#mail-status").show();
+			$('#send-message').show();
 			$('#loader-icon').show();
 			$.ajax({
 				url: "contact.php",
@@ -32,7 +32,7 @@ require('../passwords/constant.php');
 					$('#send-message').show();
 					$("#mail-status").attr("class","error");				
 				} else if(response.type == "message"){
-					$('#send-message').hide();
+					$('#send-message').show();
 					$("#mail-status").attr("class","success");							
 				}
 				$("#mail-status").html(response.text);	
