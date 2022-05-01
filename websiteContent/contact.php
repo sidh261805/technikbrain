@@ -33,7 +33,7 @@ require('../passwords/constant.php');
 	
 	//reCAPTCHA validation
 	if (isset($_POST['g-recaptcha-response'])) {
-		
+		echo "inside validation";
 		require('component/recaptcha/src/autoload.php');		
 		
 		$recaptcha = new \ReCaptcha\ReCaptcha(SECRET_KEY, new \ReCaptcha\RequestMethod\SocketPost());
