@@ -1,6 +1,7 @@
 <?php
 if($_POST)
 {
+echo "line 1";
 require('../passwords/constant.php');
     
     $user_name      = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
