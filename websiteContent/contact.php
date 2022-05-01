@@ -7,26 +7,31 @@ require('../passwords/constant.php');
     $user_email     = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
     $user_phone     = filter_var($_POST["phone"], FILTER_SANITIZE_STRING);
     $content   = filter_var($_POST["content"], FILTER_SANITIZE_STRING);
-    
+    echo "line 10";
     if(empty($user_name)) {
 		$empty[] = "<b>Name</b>";		
 	}
 	if(empty($user_email)) {
+		echo "line 15";
 		$empty[] = "<b>Email</b>";
 	}
 	if(empty($user_phone)) {
+		echo "line 19";
 		$empty[] = "<b>Phone Number</b>";
 	}	
 	if(empty($content)) {
+		echo "line 23";
 		$empty[] = "<b>Comments</b>";
 	}
 	
 	if(!empty($empty)) {
+		echo "line 28";
 		$output = json_encode(array('type'=>'error', 'text' => implode(", ",$empty) . ' Required!'));
         die($output);
 	}
 	
 	if(!filter_var($user_email, FILTER_VALIDATE_EMAIL)){ //email validation
+		echo "line 34";
 	    $output = json_encode(array('type'=>'error', 'text' => '<b>'.$user_email.'</b> is an invalid Email, please correct it.'));
 		die($output);
 	}
