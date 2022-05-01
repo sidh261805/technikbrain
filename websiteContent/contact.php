@@ -37,15 +37,18 @@ require('../passwords/constant.php');
 		require('component/recaptcha/src/autoload.php');		
 		
 		$recaptcha = new \ReCaptcha\ReCaptcha(SECRET_KEY, new \ReCaptcha\RequestMethod\SocketPost());
-
+		echo "started captcha";
 		$resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+		echo "Done captcha";
 
 		  if (!$resp->isSuccess()) {
+			  	echo "success";
 				$output = json_encode(array('type'=>'error', 'text' => '<b>Captcha</b> Validation Required!'));
 				die($output);				
 		  }
 		else {
-		    $errors = $resp->getErrorCodes();
+			echo "Failed";
+		    	$errors = $resp->getErrorCodes();
 			echo $errors
 		 }
 	}
